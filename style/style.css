@@ -1,0 +1,221 @@
+body {
+    margin: 0px;
+    overflow-x: hidden;
+    font-family: monospace;
+}
+
+#page {
+    height: 100%;
+    background-color: #2B2B2B;
+    display: grid;
+    grid-template-areas:
+        'leftcol leftdragbar tabpages rightdragbar rightcol'
+        'leftcol leftdragbar tabpages rightdragbar rightcol'
+        'leftcol leftdragbar tabpages rightdragbar rightcol'
+        'leftcol leftdragbar tabpages rightdragbar rightcol';
+    grid-template-rows: min-content 1fr 9fr 1fr;
+    grid-template-columns: 4fr 6px 4.5fr 6px 1.5fr;	
+}
+
+/*****************************/
+#header {
+    background-color: lightblue;
+    overflow: auto;
+    grid-area: header;
+}
+
+#leftcol {
+    overflow: hidden;
+    grid-area: leftcol;
+}
+
+#leftdragbar {
+    background-color: black;
+    grid-area: leftdragbar;
+    cursor: ew-resize;
+}
+
+#tabs {
+    overflow: auto;
+    grid-area: tabs;
+}
+
+#tabpages {
+    overflow: auto;
+    grid-area: tabpages;
+    overflow: hidden;
+}
+
+#rightdragbar {
+    background-color: black;
+    grid-area: rightdragbar;
+    cursor: ew-resize;
+}
+
+
+#rightcol {
+    overflow: hidden;
+    grid-area: rightcol;
+    user-select: none;
+}
+
+#footer {
+    background-color: lightblue;
+    overflow: auto;
+    grid-area: footer;
+}
+#canvas{
+    width: 100%;
+    height: 100%;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: -webkit-crisp-edges;
+    image-rendering: optimize-contrast;
+    image-rendering: pixelated;
+    image-rendering: pixelated;
+    image-rendering: crisp-edges;
+    image-rendering: optimizeSpeed;
+    -ms-interpolation-mode: nearest-neighbor;
+}
+
+.renderer{
+    width: 100%;
+    height: 100%;
+    background-color: #252525;
+}
+
+.lpfoot{
+    height: 60px;
+    background-color: darkcyan;
+    display: flex;
+}
+
+.scrollable {
+    overflow-x: hidden;
+    overflow-y: auto;
+    scrollbar-color: var(--brdrDrk) rgba(0,0,0, var(--alphaDark) );
+    scrollbar-width: thin;
+}
+
+.layeritem{
+    background-color: aquamarine;
+    margin: 5px;
+    height: 60px;
+    padding: 10px;
+}
+
+.visibility{
+    background-color: dimgrey;
+    width: 60px;
+    height: 60px;
+    text-align: center;
+    cursor: pointer !important;
+}
+
+.visibility > i {
+    position:relative;
+    top: calc(50% - 10px);
+}
+
+.item_wrapper {
+    display: -webkit-box;
+    display:    -moz-box;
+    display:         box;
+    padding: 0;
+    margin: 10px;
+    background: #222;
+    cursor: grab;
+}
+
+.item_col {
+    -webkit-box-flex: 1;
+    -moz-box-flex: 1;
+        box-flex: 1;
+    list-style: none;
+}
+
+.fix {
+    text-align: center;
+    width: 50px;
+    height: 50px;
+    -webkit-box-flex: 0;
+    -moz-box-flex: 0;
+        box-flex: 0;
+
+}
+
+.one {
+    user-select: none;
+    margin-left: 5px;
+    height: 50px;
+    color: white;
+    overflow: hidden;
+}
+
+.two {
+    height: 50px;
+    display: table-cell;
+    vertical-align: middle;
+}
+
+
+ #downloadbtn {
+    padding: 10px;
+    text-align: center;
+    width: 100%;
+    color: #fff;
+    cursor: pointer;
+    font-size: 20px;
+    vertical-align: middle;
+    border: none;
+    background: #222;
+    transition: background 0.3s;
+    margin-bottom: 6px;
+}
+
+.file-upload {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .file-upload__label {
+    display: block;
+    padding: 10px;
+    color: #fff;
+    background: #222;
+    transition: background 0.3s;
+    font-family: monospace;
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 6px;
+    margin-top: 6px;
+  }
+  .file-upload__label:hover {
+    cursor: pointer;
+    background: #000;
+  }
+  
+  #downloadbtn:hover {
+    cursor: pointer;
+    background: #000;
+  }
+  .file-upload__input {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    font-size: 1;
+    width: 0;
+    height: 100%;
+    opacity: 0;
+  }
+
+#border_top{
+    visibility: hidden;
+    width: 100%;
+    height: 5px;
+    position: absolute;
+    background: black;
+}
+    

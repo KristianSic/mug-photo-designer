@@ -1,0 +1,37 @@
+<head>
+	<script src="https://kit.fontawesome.com/921fd74eb4.js" crossorigin="anonymous"></script>
+	<script type="module" src="scripts/OrbitControls.js"></script>
+	<script type="module" src="scripts/three.module.js"></script>
+	<script type="module" src="scripts/GLTFLoader.js"></script>
+	<link rel="stylesheet" type="text/css" href="style/style.css">
+</head>
+
+<body onresize="ResetColumnSizes(event)">
+	<div id="page" onmouseup="EndDrag()" onmousemove="OnDrag(event)">
+		<div id="leftcol"></div>
+		<div id="leftdragbar" onmousedown="StartLeftDrag()"></div>
+		<div id="tabpages">
+			<canvas id="canvas" width="600" height="400"></canvas>
+		</div>
+		<div id="rightdragbar" onmousedown="StartRightDrag()"></div>
+		<div id="rightcol">
+			<div id="border_top"></div>	
+			<div class="pbody">
+				<div class="lphead">
+					<div>
+						<input type="file" id="fileUpload" class="file-upload__input" multiple />
+						<label for="fileUpload" class="file-upload__label"><span>Upload</span></label>
+					</div>
+					<button id="downloadbtn" onclick="downloadImage()">Download</button>
+				</div>
+				<div class="lpbody scrollable">
+					<div id="layers" class="lpibody"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+<script src="scripts/rendering.js"></script>
+<script src="scripts/ui.js"></script>
+<script src="scripts/mug_rendering.js" type="module"></script>
